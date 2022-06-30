@@ -1,13 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import useFetch from "./hooks/useFetch";
+
+// const allMovies = "http://localhost:5000/api/movies";
+const oneMovie = "http://localhost:5000/api/movie";
 
 function App() {
-  return (
-    <div className="App">
-     
-    </div>
-  );
+  // const { data, isPending, error } = useFetch(allMovies);
+  const { data, isPending, error } = useFetch(`${oneMovie}/1`);
+  console.log(data);
+  console.log(isPending);
+  console.log(error);
+  return <div className="App"></div>;
 }
 
 export default App;
