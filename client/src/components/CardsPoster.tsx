@@ -1,16 +1,14 @@
-import { useContext, FC } from "react";
+import { useContext } from "react";
 import { DataContext, FetchDataType } from "../App";
-
-type CardsPosterProps = {
+export type ICardsProp = {
   key?: string;
   data: object;
 };
 
-const CardsPoster = ({ ...props }: CardsPosterProps) => {
+const CardsPoster = ({ ...props }: ICardsProp) => {
   const { isPending, error }: FetchDataType = useContext(DataContext);
   const { data }: any = props;
   const poster = data.photos.poster[0];
-  console.log(data.photos.poster[0]);
   return (
     <>
       {error && <div>{error}</div>}

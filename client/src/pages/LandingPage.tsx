@@ -16,13 +16,6 @@ const LandingPage: FC = () => {
         </Link>
       </div>
       <Card />
-      {/* {movies.map(() => {
-        return (
-          <>
-            <Card />
-          </>
-        );
-      })} */}
     </>
   );
 };

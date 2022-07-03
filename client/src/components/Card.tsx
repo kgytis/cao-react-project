@@ -1,12 +1,9 @@
-import { useContext, FC, useState, useEffect } from "react";
+import { useContext, FC } from "react";
 import { DataContext, FetchDataType } from "../App";
 import CardsInfo from "./CardsInfo";
 import CardsPoster from "./CardsPoster";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import IconButton from "@mui/material/IconButton";
 
 const responsive = {
   superLargeDesktop: {
