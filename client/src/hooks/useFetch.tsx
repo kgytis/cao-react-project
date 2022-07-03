@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 type movie = {
-  IMDB: object;
-  castAndCrew: object;
+  IMDB: { totalScore: number; userRatings: object[] };
+  castAndCrew: { actors: object[]; director: string; writers: object[] };
   description: string;
   eiriniCaregory: string;
   genres: Array<string>;
   id: number;
   length: number;
-  photos: object;
-  popularity: object;
+  photos: { cutscenes: string[]; poster: string[] };
+  popularity: { ranking: number; weeklyChange: number };
   releaseYear: number;
-  reviews: object;
+  reviews: { users: number; critics: number; metascore: number };
   title: string;
-  videos: object;
+  videos: { trailers: string[]; cutscenes: string[] };
 };
 
 const useFetch = (URL: string) => {
