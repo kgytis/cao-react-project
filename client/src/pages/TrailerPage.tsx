@@ -1,6 +1,6 @@
 import useFetch from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
-import { movie } from "../App";
+// import { movie } from "../App";
 import { useEffect, useState } from "react";
 
 const TrailerPage = () => {
@@ -21,7 +21,7 @@ const TrailerPage = () => {
       return embededString;
     };
     !isPending && setTrailer(stringExtraction());
-  }, [data]);
+  }, [data, isPending]);
 
   return (
     <>

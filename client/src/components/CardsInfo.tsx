@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { DataContext, FetchDataType } from "../App";
 import { ICardsProp } from "./CardsPoster";
 import RatingStars from "./RatingStars";
@@ -7,8 +7,6 @@ import AddIcon from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
-// import { movie } from "../App";
-
 const CardsInfo = ({ ...props }: ICardsProp) => {
   const { isPending, error }: FetchDataType = useContext(DataContext);
   const { data }: any = props; // Check ths place as movie data type doesn't fit due to optional properties???
@@ -16,12 +14,7 @@ const CardsInfo = ({ ...props }: ICardsProp) => {
   const score: number = data.IMDB.totalScore;
 
   const trailerURL: string = `/trailer/${data.id}`;
-  // enum color {
-  //     enabled = 'enabled',
-  //     disabled = 'disabled'
-  // }
-
-  //   const {hoverColor, setHoverColor} = useState<color>(color.enabled)
+  const movieURL: string = `/movie/${data.id}`;
 
   return (
     <>
@@ -31,7 +24,7 @@ const CardsInfo = ({ ...props }: ICardsProp) => {
         <>
           <div>
             <RatingStars score={score} />
-            <Link to="">
+            <Link to={movieURL}>
               {" "}
               <h1>{title}</h1>
             </Link>
@@ -45,18 +38,16 @@ const CardsInfo = ({ ...props }: ICardsProp) => {
           >
             <AddIcon color="primary" /> Watchlist
           </Button>
-          <Button
-            variant="text"
-            color="primary"
-            onClick={() => {
-              console.log("trailer clicked");
-            }}
-            // onMouseEnter={}
-          >
-            <PlayArrowIcon color="disabled" /> Trailer
-            {/* {add logic, that after mouse enter color will change, needs to be done by using useState} */}
-          </Button>
-          <Link to={trailerURL}>Play</Link>
+          <Link to={trailerURL}>
+            <Button
+              variant="text"
+              color="primary"
+              // onMouseEnter={}
+            >
+              <PlayArrowIcon color="disabled" /> Trailer
+              {/* {add logic, that after mouse enter color will change, needs to be done by using useState} */}
+            </Button>
+          </Link>
         </>
       )}
     </>

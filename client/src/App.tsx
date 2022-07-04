@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 // Page imports
 import LandingPage from "./pages/LandingPage";
 import TrailerPage from "./pages/TrailerPage";
+import MoviePage from "./pages/MoviePage";
 
 export interface FetchDataType {
   data: movie[] | undefined | object[];
@@ -50,6 +51,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/trailer/:id" element={<TrailerPage />} />
+            <Route path="/movie/:id" element={<MoviePage />} />
           </Routes>
         </DataContext.Provider>
       )}
