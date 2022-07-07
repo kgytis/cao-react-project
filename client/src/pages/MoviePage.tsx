@@ -1,7 +1,14 @@
 import useFetch from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
-// import { movie } from "../App";
+import { movie } from "../App";
 import { useEffect, useState } from "react";
+
+import MovieHeader from "../components/MoviePage/MovieHeader";
+import Media from "../components/MoviePage/Media";
+import AboutMovie from "../components/MoviePage/AboutMovie";
+import Review from "../components/MoviePage/Review";
+
+import "../assets/styles/Movie/MoviePage.css";
 
 const MoviePage = () => {
   const paramsURL = useParams();
@@ -9,54 +16,24 @@ const MoviePage = () => {
   const oneMovie = `http://localhost:5000/api/movie/${params}`;
   const [data, isPending, error]: any = useFetch(oneMovie);
 
-  const [trailer, setTrailer] = useState("");
+  const [movieData, setMovieData] = useState<movie | null>(null);
 
   useEffect(() => {
-    const stringExtraction = () => {
-      const trailer = data.videos.trailers[0];
-      const embededString = trailer.slice(
-        trailer.indexOf("=") + 1,
-        trailer.indexOf("&")
-      );
-      return embededString;
-    };
-    !isPending && setTrailer(stringExtraction());
-  }, [data, isPending]);
-
-  console.log(data);
-
+    setMovieData(data);
+  }, [data]);
   return (
     <>
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
-      {data && (
-        <>
-          <div className="header-info">
-            <div>
-              <h1>data.title</h1>
-              <div className="list-of-info">
-                <ul>
-                  <li>{data.IMDB.releaseYear}</li>
-                  <li>{data.IMDB.eirinCategory}</li>
-                  <li>
-                    {data.IMDB.length % 60} h{" "}
-                    {data.IMDB.length - (data.IMDB.length % 60) * 60} min
-                  </li>
-                </ul>
-              </div>
-            </div>
+      {data && movieData && (
+        <div className="about-movie">
+          <MovieHeader movieData={movieData} />
+          <Media movieData={movieData} />
+          <div className="about-and-review">
+            <AboutMovie movieData={movieData} />
+            <Review movieData={movieData} />
           </div>
-          <div>
-            <iframe
-              width="560"
-              height="315"
-              src={`https://www.youtube.com/embed/${trailer}?autoplay=1`}
-              title="YouTube video player"
-              // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allow="autoplay"
-            ></iframe>
-          </div>
-        </>
+        </div>
       )}
     </>
   );

@@ -5,6 +5,8 @@ import CardsPoster from "./CardsPoster";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+import "../assets/styles/Card.css";
+
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -35,10 +37,14 @@ const Card: FC = () => {
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {data && (
-        <Carousel responsive={responsive} containerClass="carousel-container">
+        <Carousel
+          responsive={responsive}
+          containerClass="carousel-container"
+          itemClass="carousel-item"
+        >
           {data.map((movie: any, index: number) => {
             return (
-              <div key={`card-${index}`}>
+              <div key={`card-${index}`} className="cards-div">
                 <CardsPoster key={`cardsPoster-${index}`} data={movie} />
                 <CardsInfo key={`cardsInfo-${index}`} data={movie} />
               </div>

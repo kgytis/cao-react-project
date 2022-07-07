@@ -1,0 +1,43 @@
+.carousel-item{
+background-color: #121212;   
+/* max-width: 350px!important; */
+padding:0 20px
+}
+
+.cards-div{
+    max-width: 350px;
+    height: 62vh;
+    border-radius: 10px;
+    background-color:#1a1a1a
+}
+
+.carousel-container{
+    height: 70vh;
+    background-color: #121212;
+}
+
+.react-multiple-carousel__arrow::before{
+    font-size: 3rem !important;
+    padding: 30px !important;
+    border-radius: 4px !important;
+    border: 1px solid white;
+  }
+
+  .react-multiple-carousel__arrow{
+    font-size: 3rem !important;
+    border-radius: 4px !important;
+    border: 1px solid white;
+  }
+  
+  .react-multiple-carousel__arrow--right{
+    padding: 0;
+    top: 25%;
+    right: 32px !important;
+  }
+  
+  .react-multiple-carousel__arrow--left{
+    padding: 0;
+    top: 25%;
+    left: 32px !important;
+  }
+

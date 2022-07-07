@@ -1,0 +1,17 @@
+.all-rating-stars{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.all-rating-stars span{
+    color: white;
+    font-size: 32px;
+    text-align: center;
+}
+
+.evaluation-star{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

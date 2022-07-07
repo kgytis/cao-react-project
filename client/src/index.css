@@ -1,77 +1,18 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  margin: 0 2em;
+  background-color: #1f1f1f;
 }
 
-.card-poster{
-  width: 300px;
-  height: 500px;
+#root {
+  background-color: #1f1f1f;
+  height: 100vh;
 }
 
-.slider{
-  width: 100%;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0
-}
-
-.card-div{
-  width: 300px;
-  height: 60vh;
-  border-radius: 10px;
-}
-
-.right-arrow{
-  position: absolute;
-  left: calc(300px + 32px);
-  font-size: 3rem;
-  color:grey;
-  z-index: 10;
-  cursor: pointer;
-  user-select: none;
-}
-.left-arrow{
-  position: absolute;
-  right: 32px;
-  font-size: 3rem;
-  color:grey;
-  z-index: 10;
-  cursor: pointer;
-  user-select: none;
-}
-
-.react-multiple-carousel__arrow::before{
-  font-size: 3rem !important;
-  padding: 30px !important;
-  border-radius: 4px !important;
-  border: 1px solid white;
-}
-
-.react-multiple-carousel__arrow{
-  font-size: 3rem !important;
-  border-radius: 4px !important;
-  border: 1px solid white;
-}
-
-.react-multiple-carousel__arrow--right{
-  padding: 0;
-  top: 25%;
-  right: 32px !important;
-}
-
-.react-multiple-carousel__arrow--left{
-  padding: 0;
-  top: 25%;
-  left: 32px !important;
+html {
+  background-color: #1f1f1f;
 }

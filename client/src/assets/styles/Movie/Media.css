@@ -1,0 +1,85 @@
+.media {
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+  gap: 10px;
+}
+/* Styles related to poster */
+.poster-container {
+  width: 20%;
+  max-height: 45vh;
+}
+
+.poster-img {
+  width: 100%;
+  max-height: 100%;
+}
+
+/* Styles related to cut-scene and trailer player */
+.cut-scene-container {
+  height: 45vh;
+  width: 55%;
+  position: relative;
+}
+
+.cut-scene-img {
+  width: 100%;
+  height: 45vh;
+}
+
+.cut-scene-container a {
+  text-decoration: none;
+}
+
+.play-button {
+  font-size: 2rem;
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  margin: 0;
+  color: white;
+}
+
+.play-button:hover {
+  color: #f5c518;
+}
+
+.all-media-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 45vh;
+  width: 25%;
+}
+
+.all-media-videos,
+.all-media-images {
+  width: 100%;
+  height: 28vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.all-media-videos {
+  margin-bottom: 2px;
+}
+
+.all-media-images {
+  margin-top: 2px;
+}
+
+.all-media-videos:hover,
+.all-media-images:hover {
+  background-color: grey;
+  color: white;
+}

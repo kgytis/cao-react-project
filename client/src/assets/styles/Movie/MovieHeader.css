@@ -1,0 +1,66 @@
+.header-info {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  min-height: 10vh;
+}
+
+.list-of-info {
+  display: flex;
+  gap: 20px;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.list-of-info li {
+  list-style: none;
+}
+
+.list-of-info a {
+  text-decoration: none;
+  color: black;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.right-side {
+  display: flex;
+  gap: 20px;
+}
+
+.imdb-sub-rating-container {
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.imdb-sub-rating-container span:first-child {
+  font-weight: bolder;
+  font-size: 1.9rem;
+}
+
+.imdb-rating-container,
+.popularity-container,
+.your-rating-container {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.popularity-container p {
+  margin: 0;
+}
+
+.imdb-rating-container h3,
+.popularity-container h3,
+.your-rating-container h3 {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.popularity-container p:nth-child(4) {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.7);
+}

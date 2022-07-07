@@ -15,10 +15,14 @@ export interface FetchDataType {
 }
 
 export type movie = {
-  IMDB: { totalScore: number; userRatings: object[] };
-  castAndCrew: { actors: object[]; director: string; writers: object[] };
+  IMDB: { totalScore: number; userRatings: [{ score: number; votes: number }] };
+  castAndCrew: {
+    actors: object[];
+    director: string;
+    writers: { name: string; role: string };
+  };
   description: string;
-  eiriniCaregory: string;
+  eirinCategory: string;
   genres: Array<string>;
   id: number;
   length: number;
@@ -41,7 +45,6 @@ const allMovies = "http://localhost:5000/api/movies";
 function App() {
   const [data, isPending, error] = useFetch(allMovies);
   // const { data, isPending, error } = useFetch(`${oneMovie}/1`);
-  console.log(data);
   return (
     <div className="App">
       {error && <div>{error}</div>}

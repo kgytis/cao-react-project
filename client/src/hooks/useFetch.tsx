@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-type movie = {
+export type movie = {
   IMDB: { totalScore: number; userRatings: object[] };
   castAndCrew: { actors: object[]; director: string; writers: object[] };
   description: string;

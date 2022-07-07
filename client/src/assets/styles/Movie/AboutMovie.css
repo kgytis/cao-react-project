@@ -1,0 +1,54 @@
+.about-and-review {
+  display: flex;
+}
+
+.genres h3 {
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.writers,
+.stars {
+  display: flex;
+  flex-direction: column;
+}
+
+.writers div,
+.stars div {
+  display: flex;
+  gap: 5px 30px;
+  flex-wrap: wrap;
+}
+
+/* .writers li:nth-child(1),
+.stars li:nth-child(1) {
+  list-style: none;
+} */
+
+.genres {
+  display: flex;
+  gap: 30px;
+  font-size: 1.4rem;
+  width: 50%;
+}
+
+.about-movie-div hr {
+  border: 1px solid rgba(255, 255, 255, 0.381);
+}
+
+.about-movie-div p,
+.about-movie-div li {
+  line-height: 24px;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: white;
+  margin: 5px 0;
+}
+
+.about-movie-div h2 {
+  line-height: 24px;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: white;
+  margin: 5px 0;
+}
